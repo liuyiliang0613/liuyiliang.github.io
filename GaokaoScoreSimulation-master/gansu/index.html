@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置页面</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+	</head>
+	<script type="text/javascript">
+		
+		//保存参数
+		function setParam(){
+			var form = document.createElement("form");
+			form.action = 'login.html';
+			form.method = 'get';
+			form.style.display = "none";
+			document.body.appendChild(form);
+			
+			
+			var _name = document.getElementById('name').value;
+			var _ch=document.getElementById('ch').value;
+			var _math=document.getElementById('math').value;
+			var _en=document.getElementById('en').value;
+			var _type=document.getElementById('type').value;
+			var _otherAll=document.getElementById('otherAll').value;
+			// var _type = $("#id_hide").find("option:selected").selectpicker('val').get('0').value;
+			
+			sessionStorage.setItem('name',_name);
+			sessionStorage.setItem('chinese',_ch);
+			sessionStorage.setItem('math',_math);
+			sessionStorage.setItem('en',_en);
+			sessionStorage.setItem('otherName',_type);
+			sessionStorage.setItem('otherAll',_otherAll);
+			
+			form.submit();
+			return form;
+			
+		}
+	</script>
+	<style type="text/css">
+		.table>tbody>tr>td {
+			text-align: center;
+		}
+		.table>thead>tr>th {
+			text-align: center;
+		}
+		.table>tbody>tr>th {
+			text-align: center;
+		}
+		
+		.bootstrap-table .table thead>tr>th {
+			text-align: center;
+		}
+		
+		.table thead {
+			background: #ebeaea;
+		}
+	</style>
+	<body>
+		<div id="" align="center">
+			
+		
+		<h1>欢迎来到设置页面</h1>
+		<form action="index.html" method="get">
+		
+		<table class="table table-hover table-bordered table-striped"  style="width: 50%;">
+			<caption>设置默认参数</caption>
+			<thead >
+				<tr>
+					<th>参数</th>
+					<th>值</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr >
+					<td>姓名</td>
+					<td>
+						<input type="text" id="name" value="" />
+					</td>
+				</tr>
+				
+				<tr >
+					<td >语文</td>
+					<td>
+						<input type="text" name="" id="ch" value="" />
+					</td>
+				</tr>
+				
+				<tr >
+					<td >数学</td>
+					<td>
+						<input type="text" name="" id="math" value="" />
+					</td>
+				</tr>
+				
+				<tr >
+					<td>英语</td>
+					<td>
+						<input type="text" id="en" value="" />
+					</td>
+				</tr>
+				
+				<tr >
+					<td >科目类别</td>
+					<td >
+						<select class="form-control" id="type" name="opt1" value="opt1">
+							<option value ="理科综合">理科综合</option>
+							<option value ="文科综合">文科综合</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>综合分数</td>
+					<td>
+						<input type="text" id="otherAll" value="" />
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<input class="btn btn-success " type="button"  onclick="setParam()" onsubmit="null" id="submit" name="submit" value="确认"/>
+					</td>
+					<td>
+						<input class="btn btn-danger " type="reset" id="reset" name="reset" value="重置"/>
+					</td>
+				</tr>
+			</tbody>
+			
+		</table>
+		
+		</form>
+		</div>
+	</body>
+</html>

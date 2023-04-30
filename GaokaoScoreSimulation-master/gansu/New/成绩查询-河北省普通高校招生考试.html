@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://xxcx.hebeea.edu.cn:9090/hebeea.xxcx/ptgk/cjcx -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>成绩查询-河北省普通高校招生考试</title>
+	
+<link href="./成绩查询-河北省普通高校招生考试_files/xxcx.css" rel="stylesheet" type="text/css">
+<script src="./成绩查询-河北省普通高校招生考试_files/jquery-3.2.1.min.js.下载" type="text/javascript"></script>
+<script>var serverBasePath = "/hebeea.xxcx";</script>
+<link href="http://xxcx.hebeea.edu.cn:9090/hebeea.xxcx/static/images/favicon.ico" rel="icon">
+
+	<script src="./成绩查询-河北省普通高校招生考试_files/encry.min.js.下载"></script>
+</head>
+<body class="body_bg" inmaintabuse="1">
+	
+<div class="banner">
+	<div class="top">
+		<img src="./成绩查询-河北省普通高校招生考试_files/logo.png">
+	</div>
+</div>
+	<div class="xxcx-title">
+		<span>2022年河北省普通高校招生考试</span><span>成绩查询</span>
+	</div>
+	<div class="xxcx-count">
+		<label>查询次数&nbsp;[</label><label id="count">1112782</label>]
+	</div>
+	<div class="xxcx-panel">
+		<div style="width: 300px; height: auto; margin: 0px auto;">
+			<div class="form-item">
+				<label>考生号</label>
+				<div>
+					<input type="text" id="kshshow" name="kshshow" placeholder="输入14位考生号" class="xxcx-input" onkeyup="resetErrMsg(&#39;kshshow&#39;)" maxlength="14">
+				</div>
+			</div>
+			<div id="kshshow-errmsg" class="form-errmsg"><div></div></div>
+			<div class="form-item">
+				<label>身份证号</label>
+				<div>
+					<input type="text" id="sfzhshow" name="sfzhshow" placeholder="输入18位身份证号" class="xxcx-input" onkeyup="resetErrMsg(&#39;sfzhshow&#39;)" maxlength="18">
+				</div>
+			</div>
+			<div id="sfzhshow-errmsg" class="form-errmsg"><div></div></div>
+			<div class="form-item">
+				<label>密　码</label>
+				<div>
+					<input type="password" id="mmshow" name="mmshow" placeholder="输入密码" class="xxcx-input" onkeyup="resetErrMsg(&#39;mmshow&#39;)" maxlength="64">
+				</div>
+			</div>
+			<div id="mmshow-errmsg" class="form-errmsg"><div></div></div>
+			<div class="form-item">
+				<label>验证码</label>
+				<div>
+					<input type="text" id="yzmshow" name="yzmshow" placeholder="验证码" autocomplete="off" style="width: 60px;" class="xxcx-input" onkeyup="resetErrMsg(&#39;yzmshow&#39;)" maxlength="4">
+					<img alt="" id="kaptcha" src="./成绩查询-河北省普通高校招生考试_files/defaultKaptcha" height="30" style="float: left; margin-left: 5px;"> <span class="vcode_c">&nbsp;[&nbsp;<a href="javascript:chagngCode();" id="change_kaptcha">换</a>&nbsp;]
+					</span>
+				</div>
+			</div>
+			<div id="yzmshow-errmsg" class="form-errmsg"><div></div></div>
+			<div class="form-item" style="text-align: center;">
+				<button class="xxcx-btn" type="button" onclick="chaxun()">查 询</button>
+			</div>
+			<form id="cjcxForm" action="file:///D:/%E6%96%87%E6%A1%A3/GaokaoScoreSimulation-master/gansu/result.html" method="post">
+				<input type="hidden" id="ksh" name="ksh">
+				<input type="hidden" id="sfzh" name="sfzh">
+				<input type="hidden" id="mm" name="mm">
+				<input type="hidden" id="yzm" name="yzm">
+			</form>
+		</div>
+	</div>
+	<div class="xxcx-tip">
+		<span>注意事项：</span>
+		<ul>
+			<li>1、密码重置通过就近报名点或区县招办进行密码重置、或通过个人电脑人脸识别自助重置密码、还可以通过河北省教育考试院微信公众号自助重置密码。</li>
+			<li>2、点击查询若无法正常显示，可能是系统忙，请避开高峰期查询。</li>
+			<li>3、查询结果仅供参考。</li>
+		</ul>
+	</div>
+	
+
+<div class="copyright">
+	<span>版权所有 © 河北省教育考试院</span>
+	<span>未经我单位书面许可不得链接此查询系统</span>
+	<span class="viewNum">45</span>
+</div>
+	<div style="display: block;"></div>
+	<script type="text/javascript">
+		function chagngCode() {
+			var kaptcha = document.getElementById("kaptcha");
+			kaptcha.src = '/hebeea.xxcx/defaultKaptcha?t=' + (new Date).getTime();
+		}
+
+		function chaxun() {
+			var ksh = document.getElementById("kshshow").value;
+			var sfzh = document.getElementById("sfzhshow").value;
+			var mm = document.getElementById("mmshow").value;
+			var yzm = document.getElementById("yzmshow").value;
+			var cjcxForm = document.getElementById("cjcxForm");
+			var kshIsRight, sfzhIsRight, mmIsRight, yzmIsRight;
+			if (ksh.length < 14) {
+				showErrMsg("kshshow", "请输入正确的考生号 ！");
+				kshIsRight = false;
+			}else{
+				resetErrMsg("kshshow");
+				kshIsRight = true;
+			}
+			
+			if (sfzh.length < 7 ) {
+				showErrMsg("sfzhshow", "请输入正确的身份证号 !");
+				sfzhIsRight = false;
+			}else{
+				resetErrMsg("sfzhshow");
+				sfzhIsRight = true;
+			}
+
+			if (mm.length == 0) {
+				showErrMsg("mmshow", "请输入密码  !");
+				mmIsRight = false;
+			}else{
+				resetErrMsg("mmshow");
+				mmIsRight = true;
+			}
+
+			if (yzm.length != 4) {
+				showErrMsg("yzmshow", "请输入4位验证码 !");
+				yzmIsRight = false;
+			}else{
+				resetErrMsg("yzmshow");
+				yzmIsRight = true;
+			}
+			if ( kshIsRight && sfzhIsRight && mmIsRight && yzmIsRight){
+				$("#sfzh").val($Jquery.encrypt(sfzh));
+				$("#mm").val($Jquery.encrypt(mm));
+				$("#yzm").val(yzm);
+				$("#ksh").val(ksh);
+				cjcxForm.submit();
+			}
+		}
+		
+		function showErrMsg(inputId, errmsg) {
+			var errMsg = $("#" + inputId + "-errmsg");
+			errMsg.html("");
+			errMsg.html(errmsg);
+		}
+		
+		function resetErrMsg(inputId){
+			var errMsg = $("#" + inputId + "-errmsg");
+			errMsg.html("");
+		}
+		
+		//跨域请求计数器
+		$.post("http://count.hebeea.edu.cn/hebeeaCounter/queryCounterJson?countCategory=ptgk_cjcx&clientCategory=pc&isCount=N",function(res){
+			$("#count").html(res.msg );
+		},'json')
+	</script>
+
+<script src="chrome-extension://dammmokdamnimedflemdaoamhldmldff/sm.bundle.js" data-pname="fatkun-pro-mv3" data-asset-path="https://fkpm3.s3.ap-northeast-2.amazonaws.com"></script></body></html>

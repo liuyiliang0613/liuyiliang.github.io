@@ -1,0 +1,568 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta http-equiv="pragram" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="0">
+		<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" media="screen" />
+		<!--meta http-equiv="refresh" content="300;URL=/index" -->
+		<META http-equiv="windows-Target" contect="_top">
+		<title>河北省教育考试院招生考试信息官方服务平台</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/validationEngine.jquery.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.loginplan_bg {
+				float: center;
+				text-align: center;
+				width: 100%;
+				background: #f5f8fc;
+				height: 310px;
+			}
+
+			.table>tbody>tr>td {
+				text-align: center;
+			}
+			.table>thead>tr>th {
+				text-align: center;
+			}
+			.table>tbody>tr>th {
+				text-align: center;
+			}
+
+			.bootstrap-table .table thead>tr>th {
+				text-align: center;
+			}
+
+			.table thead {
+				background: #ebeaea;
+			}
+
+
+			.loginplan {
+				text-align: left;
+				width: 100%;
+				background: #f5f8fc;
+				border-top: 1px solid #78a3d3;
+				margin: 0px auto;
+				height: 900px;
+				overflow-y: auto;
+			}
+
+			.select div {
+				border: 1px solid #0787a3;
+				float: left;
+			}
+
+			/* 子选择器，在FF等非IE浏览器中识别 */
+			.select>div {
+				width: 300px;
+				height: 25px;
+				overflow: hidden;
+			}
+
+			/* 通配选择符，只在IE浏览器中识别 */
+			* html .select div select {
+				display: block;
+				float: left;
+				margin: -2px;
+			}
+
+			.select {
+				border: 1px solid #0787a3;
+				float: left;
+				display: inline;
+				height: 30px;
+				padding-left: 5px;
+				FONT: 14px Tahoma, Verdana, "SimSun";
+				line-height: 20px;
+			}
+
+			.select div>select {
+				display: block;
+				width: 304px;
+				float: none;
+				margin: -2px;
+				padding: 0px;
+			}
+
+			.select:hover {
+				border: 1px solid #666666;
+			}
+
+			.select select>option {
+				line-height: 24px;
+				padding-left: 5px;
+			}
+
+			select {
+				outline: none;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.regsubmit {
+				display: inline-block;
+				width: 200px;
+				height: 40px;
+				vertical-align: middle;
+				border: none;
+				border-radius: 4px;
+				background: #6095C1;
+				font-size: 16px;
+				font-weight: 700;
+				text-align: center;
+				color: #FFF;
+				cursor: pointer;
+			}
+
+			.regsubmit:hover {
+				opacity: .7;
+			}
+
+			/* 本例子css */
+			.picScroll-left {
+				overflow: hidden;
+				position: relative;
+				border: 1px solid #ccc;
+			}
+
+			.picScroll-left .hd {
+				overflow: hidden;
+				height: 30px;
+				background: #f4f4f4;
+				padding: 0 10px;
+			}
+
+			.picScroll-left .hd .prev,
+			.picScroll-left .hd .next {
+				display: block;
+				width: 5px;
+				height: 9px;
+				float: right;
+				margin-right: 5px;
+				margin-top: 10px;
+				overflow: hidden;
+				cursor: pointer;
+				background: url("../images/arrow.png") 0 0 no-repeat;
+			}
+
+			.picScroll-left .hd .next {
+				background-position: 0 -50px;
+			}
+
+			.picScroll-left .hd .prevStop {
+				background-position: -60px 0;
+			}
+
+			.picScroll-left .hd .nextStop {
+				background-position: -60px -50px;
+			}
+
+			.picScroll-left .hd ul {
+				float: right;
+				overflow: hidden;
+				zoom: 1;
+				margin-top: 10px;
+				zoom: 1;
+			}
+
+			.picScroll-left .hd ul li {
+				float: left;
+				width: 9px;
+				height: 9px;
+				overflow: hidden;
+				margin-right: 5px;
+				text-indent: -999px;
+				cursor: pointer;
+				background: url("../images/icoCircle.gif") 0 -9px no-repeat;
+			}
+
+			.picScroll-left .hd ul li.on {
+				background-position: 0 0;
+			}
+
+			.picScroll-left .bd {
+				padding: 5px;
+			}
+
+			.picScroll-left .bd ul {
+				overflow: hidden;
+				zoom: 1;
+			}
+
+			.picScroll-left .bd ul li {
+				margin: 0 1px;
+				float: left;
+				_display: inline;
+				overflow: hidden;
+				text-align: center;
+			}
+
+			.picScroll-left .bd ul li .pic {
+				text-align: center;
+			}
+
+			.picScroll-left .bd ul li .pic img {
+				width: 190px;
+				display: block;
+				padding: 2px;
+				border: 0px solid #ccc;
+			}
+
+			.picScroll-left .bd ul li .pic a:hover img {
+				border-color: #999;
+			}
+
+			.picScroll-left .bd ul li .title {
+				line-height: 24px;
+			}
+
+			-->
+		</style>
+		<script type="text/javascript" language="javascript" src="js/jquery-1.9.1.min.js"></script>
+
+		<script>
+			function AutoCompleteSwitch(objForm, autoCompleteValue) {
+				var objElements = objForm.elements;
+				for (var i = 0; i < objElements.length; i++) {
+					if (objElements[i].type == "text") {
+						objElements[i].autocomplete = autoCompleteValue;
+					}
+				}
+			}
+			String.prototype.trim = function() {
+				return this.replace(/　/g, " ").replace(/ /g, "");
+			}
+			var today = new Date();
+			var year = today.getFullYear() + "";
+			year = year.substr(2, 2);
+
+			var cTime = 300;
+
+			function TimeClose() {
+				window.setTimeout('TimeClose()', 1000);
+				if (cTime <= 0) CloseWindow_Click();
+				cTime--;
+			}
+
+			function CloseWindow_Click() {
+				window.open("", "_self");
+				window.opener = null;
+				window.close();
+				}
+				
+				// 初始化数据
+			function initData(){
+				var _name=sessionStorage.getItem("name");
+				var _studentId=sessionStorage.getItem("studentId");
+				var _personId=sessionStorage.getItem("personId");
+				var _chinese=sessionStorage.getItem("chinese");
+				var _math=sessionStorage.getItem("math");
+				var _en=sessionStorage.getItem("en");
+				var _otherName=sessionStorage.getItem("otherName");
+				var _otherAll=sessionStorage.getItem("otherAll");
+				
+				var _sumGrade = parseInt(_chinese)+parseInt(_math)+parseInt(_en)+parseInt(_otherAll);
+				
+				document.getElementById("name").innerText=(_name==null?"刘奕良":_name);
+				document.getElementById("studentId").innerText=(_studentId==null?"23138051100334":_studentId);
+				document.getElementById("personId").innerText=(_personId==null?"130982200506136554":_personId);
+				document.getElementById("chinese").innerText=(_chinese==null? 108:_chinese);
+				document.getElementById("math").innerText=(_math==null?89:_math);
+				document.getElementById("en").innerText=(_en==null?134:_en);
+				document.getElementById("otherName").innerText=(_otherName==null?"物理":_otherName);
+				document.getElementById("otherAll").innerText=(_otherAll==null?49:_otherAll);
+			}
+			
+			
+		</script>
+	</head>
+	<body onLoad="initData();AutoCompleteSwitch(document.forms[0],'off');document.all.username.focus();">
+		<div class="main" id="main">
+
+			<div class="content" id="content">
+
+				<table style="width:100%;text-align:center;" cellpadding="0" cellspacing="0">
+					<tr>
+						<td class="READNEWSTITLE" style="height:70px;text-align:center;vertical-align:middle;">河北省普通高校招生考试成绩查询</td>
+					</tr>
+					<!--tr><td> <hr size="2"></td></tr -->
+					<tr>
+						<td style="height:500px;">
+							<div class="loginplan_bg">
+								<div class="loginplan" id="loginplan">
+
+									<div align="center">
+
+										<table border="0" cellspacing="0" cellpadding="0" style="border-collapse:separate; border-spacing:0px 10px;">
+
+											<tr>
+												<th>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</th>
+												<th id="name">刘奕良</th>
+											</tr>
+											<tr>
+												<th >考 生 号：</th>
+												<th id="studentId">23138051100334</th>
+											</tr>
+											<tr>
+												<th >身份证号：</th>
+												<th id="personId">130982200506136554</th>
+											</tr>
+										</table>
+
+										<br>
+
+										<table class="table table-bordered table-striped" style="width: 50%;" id="data_table">
+											<thead>
+												<tr>
+													<th>科目</th>
+													<th>成绩</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>语文</td>
+													<td id="chinese">113</td>
+												</tr>
+												<tr>
+													<td>数学</td>
+													<td id="math">81</td>
+												</tr>
+												<tr>
+													<td>外语</td>
+													<td id="en">133</td>
+												</tr>
+													<td id="otherName">物理</td>
+													<td id="otherAll">58</td>
+												</tr>
+												<tr>
+													<td id="otherName">化学</td>
+													<td id="otherAll">86</td>
+												</tr>
+												<tr>
+													<td id="otherName">生物</td>
+													<td id="otherAll">80</td>
+												</tr>
+												<tr>
+													<th>总分</th>
+													<th id="sum">546</th>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+
+
+		</div>
+
+
+		</div>
+		</td>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			<td style="height:5px;">&nbsp;</td>
+		</tr>
+		</table>
+		</div>
+
+		<div class="footer">
+			<TABLE border=0 cellSpacing=0 cellPadding=0 style="text-align:center;width:100%;vertical-align:bottom;padding:20px 0 0 0;">
+				<TBODY>
+					<TR>
+						<TD style="height:25px;">建议使用IE8以上或Firefox浏览器，分辨率设置在1600*900以上</TD>
+					</TR>
+					<TR>
+						<TD style="height:25px;">
+							<A href="http://www.hebeea.edu.cn/" target="_blank">河北省教育考试院</A>&copy;
+							2011-2023&nbsp;&nbsp;&nbsp;&nbsp;河北省教育考试院© 2011-2023    河北省石家庄市红旗大街231号 邮编：050091
+						</TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+		</div>
+		</div>
+	</body>
+	<script language="javascript" type="text/javascript" src="js/jquery.validationEngine-zh_CN.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery.validationEngine.js"></script>
+	<script language="javascript" type="text/javascript" src="js/function.js"></script>
+	<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<script type="text/javascript" language="javascript" src="js/layer/layer.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jsencrypt.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.fn.serializeObject = function() {
+				var o = {};
+				var a = this.serializeArray();
+				$.each(a, function() {
+					if (o[this.name]) {
+						if (!o[this.name].push) {
+							o[this.name] = [o[this.name]];
+						}
+						o[this.name].push(this.value || '');
+					} else {
+						o[this.name] = this.value || '';
+					}
+				});
+				return o;
+			};
+
+			$('#loginform')[0].reset();
+			var h1 = $(window).height();
+			if (h1 < 750) h1 = 750;
+			$('#main').height(h1);
+			$(".content").height(h1 - 210);
+			$(".loginplan_bg").height(h1 - 320);
+			$(".loginplan").height(h1 - 475);
+			$(window).resize(function() {
+				h1 = $(window).height();
+				if (h1 < 750) h1 = 750;
+				$('#main').height(h1);
+				$(".content").height(h1 - 210);
+				$(".loginplan_bg").height(h1 - 320);
+				$(".loginplan").height(h1 - 475);
+			});
+
+
+			//jQuery(".picScroll-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:5,interTime:60,trigger:"click"});
+			$('#loginform').validationEngine('attach', {
+				promptPosition: 'topRight:-40,5',
+				scroll: false
+			});
+			/**
+			$('#loginform').validationEngine({
+				prettySelect: true,
+				ajaxFormValidation: true,
+				ajaxFormValidationMethod: 'post',
+				onAjaxFormComplete: function(status, form, json, options){
+					if(json.success){
+						var type = $("#type").val();
+						if(type=='gkcjcx'){
+							getGkcjkItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='myksgkcjcx'){
+							getMysjksGkcjItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='gklqcx'){
+							getGklqkItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='ysxkcx'){
+							getYsxkbakItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='ystytkcx'|| type=='kcpmcx'){
+							getYstytkcxItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='ystytkzhcjcx'){
+							getYstytkzhcjcxItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='czcjcx'){
+							getCzcjkItem(json.results,$("#type").find("option:selected").text());
+						}else if(type=='czlqcx'){
+							getCzlqkItem(json.results,$("#type").find("option:selected").text());
+						}
+					}else{
+						layer.msg('<span style="color:#F00;font-size:12pt;">'+json.msg+'</span>',
+							{icon:2, title:'提示',area: '420px',move: false,closeBtn: 2,time:0,btn:['确定']},
+							function() {
+								$('#loginform')[0].reset();
+							}
+						);
+					}
+				}
+			});
+			*/
+
+			$('#loginBtn').on('click', function() {
+				// var formParam = $('#loginform').serializeObject();
+				// $.ajax({
+				// 	url: '/getRsaKeyPublic',
+				// 	dataType: 'text',
+				// 	type: 'get',
+				// 	success: function(data) {
+				// 		var jsentrypt = new JSEncrypt();
+				// 		jsentrypt.setPublicKey(data);
+				// 		formParam.password = jsentrypt.encrypt(formParam['password']);
+				// 		$.ajax({
+				// 			url: '/loginCheck',
+				// 			type: 'post',
+				// 			data: formParam,
+				// 			success: function(json) {
+				// 				if (json.success) {
+				// 					var type = $("#type").val();
+				// 					if (type == 'gkcjcx') {
+				// 						getGkcjkItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'myksgkcjcx') {
+				// 						getMysjksGkcjItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'gklqcx') {
+				// 						getGklqkItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'ysxkcx') {
+				// 						getYsxkbakItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'ystytkcx' || type == 'kcpmcx') {
+				// 						getYstytkcxItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'ystytkzhcjcx') {
+				// 						getYstytkzhcjcxItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'czcjcx') {
+				// 						getCzcjkItem(json.results, $("#type").find("option:selected").text());
+				// 					} else if (type == 'czlqcx') {
+				// 						getCzlqkItem(json.results, $("#type").find("option:selected").text());
+				// 					}
+				// 				} else {
+				// 					layer.msg('<span style="color:#F00;font-size:12pt;">' + json.msg + '</span>', {
+				// 							icon: 2,
+				// 							title: '提示',
+				// 							area: '420px',
+				// 							move: false,
+				// 							closeBtn: 2,
+				// 							time: 0,
+				// 							btn: ['确定']
+				// 						},
+				// 						function() {
+				// 							//$('#loginform')[0].reset();
+				// 						}
+				// 					);
+				// 				}
+				// 			}
+				// 		});
+				// 	}
+				// });
+			})
+
+
+
+
+			$.ajax({
+				type: "post",
+				//url: "/getQueryitems",
+				url: "/listAllQueryitems",
+				dataType: "json",
+				contentType: "application/json",
+				success: function(data, textStatus) {
+					$("#type").empty();
+					var results = data.results;
+					var totalCount = results.length;
+					if (data.success && totalCount > 0) {
+						for (var i = 0; i < totalCount; i++) {
+							if (results[i].isdefault == '1') {
+								$("#type").append("<option value='" + results[i].xtype + "' selected=\"selected\">" + results[i].disptext +
+									"</option>");
+							} else {
+								$("#type").append("<option value='" + results[i].xtype + "'>" + results[i].disptext + "</option>");
+							}
+						}
+					}
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					//alert(errorThrown);
+				}
+			})
+		});
+	</script>
+</html>
